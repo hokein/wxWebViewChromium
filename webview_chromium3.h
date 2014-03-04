@@ -137,6 +137,8 @@ public:
 
     void OnSize(wxSizeEvent &event);
 
+    void setPageSource(const wxString& page_source);
+
     bool Create(wxWindow* parent,
            wxWindowID id,
            const wxString& url = wxWebViewDefaultURLStr,
@@ -231,6 +233,9 @@ private:
 
     //The timer calls the CEF event loop
     wxTimer *m_timer;
+
+    // Current main frame page source
+    wxString m_page_source;
 
     //We also friend ClientHandler so it can access the history
     friend class ClientHandler;
